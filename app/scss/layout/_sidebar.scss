@@ -1,0 +1,93 @@
+.sidebar {
+   width: 40rem;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   right: -40rem;
+   background-color: $color-white;
+   z-index: 12;
+   transition: right .5s;
+
+   @include respond(phone-small) {
+      width: 100%;
+      right: -100%;
+	}
+
+   &.change {
+      right: 0;
+   }
+
+   &__list {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &-item {
+         text-align: center;
+      }
+
+      &-link {
+         font-family: 'Baloo Da 2', serif;
+         font-size: 4rem;
+         color: $color-grey-dark;
+         position: relative;
+         outline: none;
+
+         @include respond(tab-land) {
+            font-size: 3rem;
+         }
+
+         &::before {
+            content: attr(data-content);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $color-yellow;
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width .3s ease-in-out;
+         }
+
+         &:hover::before,
+         &:focus::before {
+            width: 100%;
+         }
+      }
+   }
+
+   &__socials {
+      position: absolute;
+      bottom: 3rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      a {
+         outline: none;
+      }
+
+      a:focus i {
+         background-color: $color-yellow;
+      }
+
+      i {
+         font-size: 2.2rem;
+         margin: 3rem;
+         width: 4.5rem;
+         height: 4.5rem;
+         background-color: $color-grey-dark-2;
+         color: $color-white;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 50%;
+         transition: background-color .3s;
+
+         &:hover {
+            background-color: $color-yellow;
+         }
+      }
+   }
+}

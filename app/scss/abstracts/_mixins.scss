@@ -1,0 +1,47 @@
+//IMAGE-SET
+
+@mixin image-set {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+//MEDIA QUERY MANAGER
+
+/* 
+500-700px:      Phone small
+700-1000px:     Phone
+1000-1300px:    Tablet portrait
+1300-1400px:    Tablet mini landscape
+1400-1500px:    Tablet landscape
+1500+px:        Tablet big landscape
+
+$breakpoint arguments choices:
+- phone-small
+- phone
+- tab-port
+- tab-mini-land
+- tab-big-land
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-small {
+        @media only screen and (max-width:31.25em) { @content }; //500px 
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width:43.75em) { @content }; //700px 
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width:62.5em) { @content }; //1000px 
+    }
+    @if $breakpoint == tab-mini-land {
+        @media only screen and (max-width:81.25em) { @content }; //1300px 
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width:87.5em) { @content }; //1400px 
+    }
+    @if $breakpoint == tab-big-land {
+        @media only screen and (max-width:93.75em) { @content }; //1500px 
+    }
+}
