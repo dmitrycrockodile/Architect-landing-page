@@ -1,0 +1,43 @@
+.story {
+   transform: skewX(-20deg);
+   display: flex;
+
+   @include respond(tab-mini-land) {
+      transform: skewX(0);
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__text {
+      letter-spacing: .1rem;
+   }
+
+   &__bg {
+      background-color: rgba(238, 238, 238, .85);
+      padding: 5rem;
+      margin: 5rem;
+      width: 70%;
+      box-shadow: 0 2rem 5rem rgba(51, 51, 51, .4);
+      transform: skewX(20deg);
+
+      @include respond(tab-land) {
+         width: 85%;
+      }
+
+      @include respond(tab-mini-land) {
+         transform: skew(0);
+      }
+   }
+
+   &__img {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 5rem;
+
+      @include respond(tab-mini-land) {
+         margin-bottom: 3rem;
+      }
+   }
+}

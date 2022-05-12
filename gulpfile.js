@@ -27,7 +27,6 @@ function images() {
 function scripts() {
   return src([
     'app/js/inert.js',
-    'app/js/tilt.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

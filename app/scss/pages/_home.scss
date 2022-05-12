@@ -1,93 +1,37 @@
-.about-us {
-   width: 100%;
-   background-color: $color-grey-light;
-   padding-bottom: 15rem;
-
-   &__img-wrapper img {
-      width: 100%;
-      object-fit: cover;
-      opacity: .8;
-
-      @include respond(tab-port) {
-         width: 100%;
-      }
-   }
-
-   &__img-wrapper {
-      grid-column: 7 / 11;
-      grid-row: 2 / 6;
-      width: 100%;
-
-      @include respond(tab-big-land) {
-         grid-row: 3 / -1;
-      }
-
-      @include respond(tab-port) {
-         width: 40rem;
-      }
-   }
+.popular-tours {
+   padding: 5rem 0 10rem 0;
 }
 
-.team {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   padding: 0 5rem 20rem 5rem;
+.stories {
+   padding: 10rem 0;
+   position: relative;
 
-   @include respond(tab-mini-land) {
-      padding-bottom: 5rem;
+   &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .4;
+   }
+
+   &__video-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
    }
 }
 
 .contact {
-   width: 100%;
-   height: 100vh;
-   background-color: $color-grey-dark-5;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   &__heading {
-      @include respond(tab-mini-land) {
-         margin-bottom: 2rem;
-      }
-   }
-
-   &-wrapper {
-      width: 60%;
-      height: 75rem;
-      display: flex;
-      box-shadow: 0 3rem 7rem rgba($color-black, .5);
-
-      @include respond(tab-big-land) {
-         width: 80%;
-         height: 65rem;
-      }
-
-      @include respond(tab-mini-land) {
-         width: 90%;
-         height: 55rem;
-      }
-   }
-
-   &__left {
-      width: 35%;
-      background-image: linear-gradient(rgba(15, 15, 15, .6), rgba(22, 22, 22, .9)), url("../images/contact-bg.jpg");
-      @include image-set;
-
-      @include respond(tab-port) {
-         width: 0;
-      }
-   }
-
-   &__right {
-      width: 65%;
-      background-color: $color-grey-light-2;
-      padding: 3rem 10rem 10rem 10rem;
-
-      @include respond(tab-port) {
-         width: 100%;
-      }
-   }
+   padding: 15rem 0 20rem 0;
+   text-align: center;
+   background: url("../images/contact-us-bg.png");
+   @include image-set;
+   animation: contact-bg 35s infinite;
 }

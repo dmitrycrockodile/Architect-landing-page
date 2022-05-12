@@ -1,33 +1,42 @@
-//MENU
-const navbarWork = () => {
-   const menuBtn = document.querySelector('.hamburger-menu');
-   const sidebar = document.querySelector('.sidebar');
-   sidebar.inert = true;
+//CARDS
+const navBtns = document.querySelectorAll('.card__nav-btn');
 
-   menuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('change');
-      menuBtn.classList.toggle('change');
-      sidebar.inert = !sidebar.inert;
+function showTour(btns) {
+   btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+         btn.parentElement.parentElement.classList.toggle('change');
+      });
    });
-}
+};
 
-navbarWork();
+showTour(navBtns);
 
-//Scroll Button
-const scrollBtn = document.querySelector('.scroll-btn');
-const html = document.querySelector('html')
+//Navbar
+const navLinks = document.querySelectorAll('.navbar__list-link');
+const container = document.querySelector('.container');
+const navbar = document.querySelector('.navbar');
+const openBtn = document.querySelector('.navbar__btn--open');
+const closeBtn = document.querySelector('.navbar__btn--close');
+navbar.inert = true;
 
-scrollBtn.addEventListener('click', () => {
-   html.style.scrollBehavior = 'smooth';
-   setTimeout(() => {
-      html.style.scrollBehavior = 'unset ';
-   }, 1000)
+openBtn.addEventListener('click', () => {
+   container.classList.add('change');
+   navbar.inert = false;
+});
+closeBtn.addEventListener('click', () => {
+   container.classList.remove('change');
+   navbar.inert = true;
 });
 
-//Spinner 
-const body = document.querySelector('body');
-window.onload = () => {
-   setTimeout(() => {
-      body.classList.add('display');
-   }, 4000)
-}
+function setColors(items) {
+   const colors = ['#6495ed', '#7fffd4', '#ffa07a', '#f08080', '#afeeee'];
+   let i = 0;
+
+   items.forEach(item => {
+      item.style.cssText = `background-color: ${colors[i++]}`;
+   });
+};
+
+setColors(navLinks);
+
+//inert

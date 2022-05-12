@@ -2,8 +2,8 @@ html {
 	font-size: 62.5%;
 
 	@include respond(phone-small) {
-		font-size: 45%;
-	}
+      font-size: 45%;
+   }
 }
 
 *,
@@ -23,6 +23,7 @@ body {
 	font-weight: 400;
 	margin: 0;
 	color: $color-black;
+	font-family: 'Vollkorn', serif;
 }
 
 
@@ -40,50 +41,19 @@ a {
 	color: inherit;
 }
 
-.img-wrapper {
-	width: 100%;
-	height: 100%;
-	background-color: rgba($color-black, .8);
-	overflow: hidden;
-}
-
-.btn-reset {
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	padding: 0;
-	outline: none;
-}
-
-.underline {
-	width: 12rem;
-	height: 0.3rem;
-	background-color: $color-yellow;
-}
-
-.spinner-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: $color-grey-dark-4;
+.center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: all 1s;
-	z-index: 300;
-}
-
-.display .spinner-container {
-	opacity: 0;
-	visibility: hidden;
 }
 
 .container {
-	display: none;
-}
+	background-color: $color-secondary;
+	margin: 3.5rem;
+	box-shadow: 0 1rem 3rem $color-grey;
+	overflow: hidden;
 
-.display  .container {
-	display: block;
+	@include respond(phone) {
+      margin: 0;
+   }
 }

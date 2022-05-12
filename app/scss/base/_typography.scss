@@ -1,69 +1,105 @@
-.section-heading {
-   font-family: 'Muli', serif;
-   font-size: 5rem;
-   font-weight: 300;
-   color: $color-grey-dark-3;
-   margin-bottom: 6rem;
+.heading-1 {
+   font-size: $heading-1-size;
+   color: $color-white;
+
+   @include respond(tab-mini-land) {
+      font-size: 6rem;
+   }
 }
 
-.service__title {
-   font-family: 'Baloo Da 2', serif;
-   font-size: 2.6rem;
-   line-height: 2.6rem;
-   font-weight: 400;
-   margin-bottom: 2rem;
+.header__paragraph {
+   font-size: 3rem;
+   font-weight: 500;
+   color: $color-secondary;
+   max-width: 70rem;
+   margin: auto;
+
+   @include respond(tab-mini-land) {
+      font-size: 2.5rem;
+   }
+
+   @include respond(tab-port) {
+      display: none;
+   }
 }
 
-.service__text {
-   font-family: 'Josefin Slab', serif;
-   font-size: 1.6rem;
-   text-align: justify;
+.popular-tours__title {
+   font-size: $heading-1-size;
+   text-align: center;
+   margin-bottom: 8rem;
+   color: $color-primary;
+   text-shadow: 0 .1rem .2rem $color-primary;
+   text-transform: capitalize;
+
+   @include respond(tab-mini-land) {
+      font-size: 6rem;
+   }
+
+   @include respond(tab-port) {
+      font-size: 5rem;
+   }
 }
 
 .card__name {
-   font-family: 'Baloo Da 2', serif;
    font-size: 2.5rem;
-   line-height: 2.5rem;
-   font-weight: 300;
-   color: $color-grey-light-2;
+   font-weight: 700;
+   text-transform: uppercase;
+   position: absolute;
+   top: 30%;
+   right: 1.5rem;
+   color: $color-white;
+   text-shadow: 0 0 1rem $color-black;
 }
 
-.card__position {
-   font-family: 'Muli', serif;
-   font-size: 2rem;
-   font-weight: 500;
-   color: $color-red-dark;
-   margin-bottom: 1rem;
-}
-
-.card__descr {
-   font-family: 'Baloo Da 2', serif;
-   font-size: 1.4rem;
-   line-height: 1.6rem;
-   font-weight: 300;
-   color: $color-grey-light-2;
-   width: 80%;
-   margin-bottom: 2rem;
-}
-
-.contact__heading {
-   font-family: 'Baloo Da 2', serif;
-   font-size: 6rem;
-   font-weight: 300;
-   color: $color-grey-dark-5;
-   margin-bottom: 5rem;
-   text-align: center;
-}
-
-.footer__copyright {
-   font-family: 'Baloo Da 2', serif;
-   font-size: 1.6rem;
+.story__title {
+   font-size: 2.5rem;
+   text-transform: uppercase;
    color: $color-grey;
+   margin-bottom: 1rem; 
 }
 
-.section-header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 7rem 0 10rem 0;
+.story__paragraph {
+   font-size: 1.8rem;
+   color: $color-grey-light;
+
+   &::first-letter {
+      margin-left: 1rem;
+   }
+}
+
+.contact__title {
+   font-size: 7rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: .5rem;
+   color: $color-white;
+   text-shadow: 0 1rem 2rem $color-black;
+   margin-bottom: 8rem;
+
+   @include respond(phone) {
+      font-size: 6rem;
+   }
+}
+
+.footer {
+   &__copy {
+      text-align: center;
+      font-size: 1.5rem;
+      color: $color-secondary;
+      letter-spacing: .2rem;
+      margin-top: 5rem;
+   }
+
+
+   &__list-link {
+      font-size: 2rem;
+      color: inherit;
+   }
+}
+
+.navbar__list-link {
+   font-size: 3rem;
+   font-weight: 700;
+   color: $color-white;
+   text-transform: uppercase;
 }

@@ -1,76 +1,110 @@
 .cards-wrapper {
    display: flex;
    justify-content: space-evenly;
-   margin-top: 8rem;
-   width: 100%;
 
-   @include respond(tab-mini-land) {
+   @include respond(tab-land) {
       flex-direction: column;
       align-items: center;
-      margin-top: 4rem;
    }
 }
 
 .card {
-   width: 37rem;
-   height: 45rem;
-   box-shadow: 0 1rem 4rem rgba($color-black, .4);
-   border-radius: .5rem;
+   width: 35rem;
    position: relative;
+   perspective: 150rem;
 
-   @include respond(tab-big-land) {
-      width: 34rem;
+   @include respond(tab-land) {
+      margin: 3rem 0;
    }
 
-   @include respond(tab-mini-land) {
-      margin-bottom: 8rem;
+   &__img {
+      width: 100%;
+      border-radius: .3rem .3rem 0 0;
    }
 
-   &:hover &__img-wrapper img {
+   &__front-side {
+      text-align: center;
+      background-color: $color-white;
+      border-radius: .3rem;
+      position: relative;
+      z-index: 10;
+      opacity: .9;
+      transition: opacity .4s, transform .4s, box-shadow .4s;
+   }
+
+   &.change > &__front-side {
+      transform: translateZ(-5rem) translateX(3rem);
+      box-shadow: 0 2rem 4rem $color-grey-light;
       opacity: .5;
+      z-index: 0;
    }
 
-   &__img-wrapper {
+   &__back-side {
+      position: absolute;
+      top: 0;
+      background-color: $color-primary;
       width: 100%;
       height: 100%;
-      background-color: $color-grey-dark-4;
-      border-radius: .5rem;
+      border-radius: .3rem;
+      box-shadow: 0 2rem 4rem $color-grey-light;
+      flex-direction: column;
+      transform: translateZ(-5rem) translateX(3rem);
+      opacity: .5;
+      transition: opacity .4s, transform .4s, box-shadow .4s;
+   }
 
-      img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         opacity: .8;
-         border-radius: .5rem;
-         transition: opacity .3s;
+   &.change > &__back-side {
+      transform: translateZ(0) translateX(0);
+      box-shadow: 0 .5rem 2rem $color-grey-light-2;
+      opacity: .9;
+   }
+
+   &__list {
+      width: 80%;
+      margin: auto;
+      padding: 2rem 0 3rem 0;
+
+      &-item {
+         font-size: 1.6rem;
+         font-weight: 500;
+         color: $color-grey;
+         margin: 2rem 0;
+         border-bottom: .1rem solid $color-primary;
+         padding-bottom: 1.5rem;
       }
    }
 
-   &:hover &__info {
-      bottom: 2rem;
-      opacity: 1;
-      visibility: visible;
-   }
-
-   &__info {
-      position: absolute;
-      bottom: 0;
-      padding: 2rem;
-      text-shadow: 0 .2rem .5rem rgba($color-black, .4);
-      opacity: 0;
-      visibility: hidden;
-      transition: all .3s;
+   &__price {
+      font-size: 5rem;
+      font-weight: 300;
+      color: $color-white;
+      margin-bottom: 3rem;
    }
 
    &__btn {
-      width: 10rem;
-      height: 3rem;
-      background-color: $color-yellow;
-      font-family: 'Baloo Da 2', serif;
-      font-size: 1.4rem;
-      line-height: 1.5rem;
-      color: $color-grey-light-2;
+      color: $color-primary;
+      background-color: $color-white;
+      border: none;
+      font-size: 2.5rem;
+      padding: 1rem 2rem;
+      letter-spacing: .2rem;
+      border-radius: 5rem;
+      cursor: pointer;
+   }
+
+   &__nav-btn {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      padding: 0.5rem;
+      background-color: rgba($color-white, .8);
+      color: $color-grey-light;
       border-radius: .3rem;
-      box-shadow: 0 .1rem .8rem rgba($color-black, .4);
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      cursor: pointer;
    }
 }
